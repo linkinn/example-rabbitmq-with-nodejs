@@ -1,33 +1,33 @@
 version: "3"
 
 services:
-  express-a:
-    build: ./express-a
-    entrypoint: ./.docker/entrypoint.sh
-    container_name: rabbitmq-express-a
-    restart: on-failure
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    ports:
-      - 3001:3000
-    volumes:
-      - ./express-a:/home/node/express-a
-    depends_on:
-      - rabbitmq
+  # express-a:
+  #   build: ./express-a
+  #   entrypoint: ./.docker/entrypoint.sh
+  #   container_name: rabbitmq-express-a
+  #   restart: on-failure
+  #   environment:
+  #     - CHOKIDAR_USEPOLLING=true
+  #   ports:
+  #     - 3001:3000
+  #   volumes:
+  #     - ./express-a:/home/node/express-a
+  #   depends_on:
+  #     - rabbitmq
 
-  express-b:
-    build: ./express-b
-    entrypoint: ./.docker/entrypoint.sh
-    container_name: rabbitmq-express-b
-    restart: on-failure
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    ports:
-      - 3000:3000
-    volumes:
-      - ./express-b:/home/node/express-b
-    depends_on:
-      - rabbitmq
+  # express-b:
+  #   build: ./express-b
+  #   entrypoint: ./.docker/entrypoint.sh
+  #   container_name: rabbitmq-express-b
+  #   restart: on-failure
+  #   environment:
+  #     - CHOKIDAR_USEPOLLING=true
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - ./express-b:/home/node/express-b
+  #   depends_on:
+  #     - rabbitmq
 
   rabbitmq:
     image: "rabbitmq:3.8-management-alpine"
